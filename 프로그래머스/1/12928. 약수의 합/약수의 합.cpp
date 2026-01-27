@@ -13,13 +13,8 @@ int solution(int n) {
     while(iNum <= fSqrt)
     {
         if(n % iNum == 0)
-        {
-            if(iNum == fSqrt)
-                answer += iNum;
-            else
-                answer += iNum + n / iNum;
-        }
-            
+            answer += (iNum == fSqrt) ? iNum : iNum + n / iNum;
+        
         ++iNum;
     }
     
