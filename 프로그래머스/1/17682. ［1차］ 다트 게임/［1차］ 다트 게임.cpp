@@ -10,7 +10,7 @@ int solution(string dartResult) {
     
     string strNum = "";
     int iIndex = {-1};
-    
+
     map<char, int> bonus;
     bonus.emplace('S', 1);
     bonus.emplace('D', 2);
