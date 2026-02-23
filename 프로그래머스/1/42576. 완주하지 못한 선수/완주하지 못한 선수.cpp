@@ -1,13 +1,13 @@
 #include <string>
 #include <vector>
-#include <map>
+#include <unordered_map>
 
 using namespace std;
 
 string solution(vector<string> participant, vector<string> completion) {
     string answer = "";
     
-    map<string, int> check;
+    unordered_map<string, int> check;
     
     for(auto& name : participant)
     {
