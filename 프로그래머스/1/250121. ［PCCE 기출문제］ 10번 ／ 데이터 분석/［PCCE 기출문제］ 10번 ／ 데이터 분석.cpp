@@ -4,13 +4,6 @@
 #include <algorithm>
 using namespace std;
 
-static int iSortIndex = 0;
-
-bool Desc(vector<int> a, vector<int> b)
-{
-    return a[iSortIndex] < b[iSortIndex];
-}
-
 vector<vector<int>> solution(vector<vector<int>> data, string ext, int val_ext, string sort_by) {
     vector<vector<int>> answer;
     
@@ -27,9 +20,11 @@ vector<vector<int>> solution(vector<vector<int>> data, string ext, int val_ext, 
             answer.push_back(data[i]);
     }
     
-    iSortIndex = IndexMap[sort_by];
+    int iSortIndex = IndexMap[sort_by];
     
-    sort(answer.begin(), answer.end(), Desc);
+    sort(answer.begin(), answer.end(), [&](const vector<int>& a, const vector<int>& b)->bool{
+        return a[iSortIndex] < b[iSortIndex];
+    });
     
     return answer;
 }
