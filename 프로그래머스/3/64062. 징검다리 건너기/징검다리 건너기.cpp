@@ -24,7 +24,6 @@ int solution(vector<int> stones, int k) {
         
         if(i >= k - 1 && table.front().first < answer)
             answer = table.front().first;
-        
     }
     
     return answer;
