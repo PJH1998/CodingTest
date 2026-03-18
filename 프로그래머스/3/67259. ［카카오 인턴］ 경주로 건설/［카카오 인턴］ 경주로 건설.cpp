@@ -68,7 +68,6 @@ int solution(vector<vector<int>> board) {
         }
     }
     
-    //answer = charge[board.size() - 1][board.size() - 1];
     answer = charge[0][0];
     
     return answer;
