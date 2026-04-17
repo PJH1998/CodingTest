@@ -29,13 +29,9 @@ int solution(vector<vector<int>> board, vector<vector<int>> skill) {
     {
         for(int j = 0; j < board[i].size(); ++j)
         {
-            int iLeft{}, iUp{}, iLU{};
-            if(j - 1 >= 0)
-                iLeft = sum[i][j-1];
-            if(i - 1 >= 0)
-                iUp = sum[i-1][j];
-            if(j - 1 >= 0 && i - 1 >= 0)
-                iLU = sum[i-1][j-1];
+            int iLeft = j >= 1 ? sum[i][j-1] : 0;
+            int iUp = i >= 1 ? sum[i-1][j] : 0;
+            int iLU = j - 1 >= 0 && i - 1 >= 0 ? sum[i-1][j-1] : 0;
             
             sum[i][j] += iLeft + iUp - iLU;
             
